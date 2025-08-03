@@ -197,4 +197,79 @@ jQuery(document).ready(function($) {
 	onScrollAnimating();
     
     
+    document.addEventListener('mousemove', function(e) {
+        var ball = document.getElementById('mouse-ball');
+        if (ball) {
+            ball.style.transform = `translate(${e.clientX - 15}px, ${e.clientY - 15}px)`;
+        }
+    });
+    
 });
+
+
+function resizeShootingStarsCanvas() {
+    const canvas = document.getElementById('shooting-stars');
+    if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+}
+
+window.addEventListener('resize', resizeShootingStarsCanvas);
+resizeShootingStarsCanvas();
+
+function randomBetween(a, b) {
+    return a + Math.random() * (b - a);
+}
+
+function ShootingStar() {
+    this.x = randomBetween(0, window.innerWidth);
+    this.y = randomBetween(0, window.innerHeight / 2);
+    this.length = randomBetween(100, 300);
+    this.speed = randomBetween(8, 16);
+    this.angle = randomBetween(Math.PI / 4, Math.PI / 3);
+    this.alpha = 1;
+}
+
+ShootingStar.prototype.update = function() {
+    this.x += this.speed * Math.cos(this.angle);
+    this.y += this.speed * Math.sin(this.angle);
+    this.alpha -= 0.02;
+};
+
+ShootingStar.prototype.draw = function(ctx) {
+    ctx.save();
+    ctx.globalAlpha = this.alpha;
+    ctx.strokeStyle = 'white';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(this.x, this.y);
+    ctx.lineTo(this.x - this.length * Math.cos(this.angle), this.y - this.length * Math.sin(this.angle));
+    ctx.stroke();
+    ctx.restore();
+};
+
+let shootingStars = [];
+
+function spawnShootingStar() {
+    shootingStars.push(new ShootingStar());
+}
+
+setInterval(spawnShootingStar, 2000); // Every 2 seconds
+
+function animateShootingStars() {
+    const canvas = document.getElementById('shooting-stars');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    shootingStars = shootingStars.filter(star => star.alpha > 0);
+    shootingStars.forEach(star => {
+        star.update();
+        star.draw(ctx);
+    });
+
+    requestAnimationFrame(animateShootingStars);
+}
+
+animateShootingStars();
