@@ -13,7 +13,7 @@
     --  06. Portfolio
     --  07. Footer
     --  08. Page --> About
-    --  09. Page --> Portfolio Item Type B
+    --  09. Page --> Portfolio Item Type A
     --  10. Page --> Portfolio Item Type B
  
  
@@ -827,8 +827,8 @@ a:hover
     position: fixed;
     left: 0;
     top: 0;
-    width: 5px;
-    height: 5px;
+    width: 10px;
+    height: 10px;
     background: #404c5d;
     border-radius: 50%;
     pointer-events: none;
