@@ -65,10 +65,12 @@ a
 
 h1
 {
-    font-size: 12rem;
+    font-weight: bold;
+    font-size: 10rem;
     font-family: 'Doto', sans-serif;
     margin-top: 0;
     margin-bottom: .24em;
+    word-spacing: -0.2em; /* Reduce this value for less space between words */
 }
 
 h2
@@ -84,6 +86,8 @@ h3
 h4
 {
     font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: .1em;
 }
 
 h5
@@ -99,6 +103,8 @@ h6
 p
 {
     font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: .1em;
 }
 
 a,
