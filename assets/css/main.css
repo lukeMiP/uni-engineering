@@ -766,6 +766,20 @@ a:hover
     border-left: none;
 }
 
+/* Improve sizing for portfolio carousel images: keep aspect ratio, limit height, and center */
+.portfolio-item-a .image-carousel img,
+.portfolio-item-a .image-carousel .img-responsive
+{
+    display: block;
+    max-width: 100%;
+    max-height: 60vh;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+}
+
 
 /** 10. Page --> Portfolio Item Type B
 *******************************************************************/
