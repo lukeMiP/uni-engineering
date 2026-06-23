@@ -55,7 +55,7 @@
         <!-- NAVIGATION BUTTON -->
         <div class="navigation-button">
 
-            <a href="about.html" class="nav-link"><h7>About</h7></a>
+            <a href="about.html" class="nav-link"><span>About</span></a>
 
         </div>
         <!-- /NAVIGATION BUTTON -->
@@ -63,31 +63,21 @@
 
         <!-- HERO -->
         <div class="hero">
-            <div id="particles-js"></div>
-            <canvas id="shooting-stars"></canvas>
+            <canvas id="pixel-wave" aria-hidden="true"></canvas>
 
 
             <!-- FRONT CONTENT -->
             <div class="front-content">
                 <div class="container-mid">
-                    <div id="particles-title"></div>
-                    <!-- Your title and subtitle here -->
+                    <!-- Hero title -->
                     <div class="animation-container animation-fade-right" data-animation-delay="0">
-                        
-                        <h1>Hi, I'm Luke</h1>
-                        
+                        <p class="typing-line" aria-label="Hi, I'm Luke"><span id="typing-greeting"></span></p>
                     </div>
                     <!-- /ANIMATION CONTAINER -->
-                    
-                    
-                    <!-- ANIMATION CONTAINER -->
-                    <div class="animation-container animation-fade-left" data-animation-delay="200"> 
-                       
-                        <p class="subline">Take a Look at my Projects</p>
-                        <img src="assets/img/arrow.png" alt="Arrow pointing down" style="display:block; margin:32px auto 0; width:100px;">
-                        
+                    <div class="animation-container animation-fade-left" data-animation-delay="200">
+                        <img class="hero-arrow" src="assets/img/arrow.png" alt="Scroll down">
                     </div>
-                    <!-- /ANIMATION CONTAINER -->
+
                 </div>
             </div>
             <!-- /FRONT CONTENT -->
@@ -155,7 +145,7 @@
             <!-- FOOTER INNER -->
             <div class="footer-inner scroll-animated-from-bottom">
 
-                <p>Design by Luke Prentice</a></p>
+                <p>Design by Luke Prentice</p>
                 <i class="fa fa-angle-double-up scroll-top" aria-hidden="true"></i>
             
             </div>
@@ -169,12 +159,7 @@
         <!-- JAVASCRIPTS -->
         <script type="text/javascript" src="assets/js/plugins.js"></script>
         <script type="text/javascript" src="assets/js/main.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-        <script> particlesJS.load('particles-js', 'assets/particles.json', function() {console.log('particles.js loaded - callback');}); </script>
-        <script> particlesJS.load('particles-title', 'assets/particles.json', function() {console.log('particles.js loaded for title');});</script>
-
     </body> 
     
     
 </html>
-<div id="mouse-ball"></div>
