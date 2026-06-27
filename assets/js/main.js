@@ -275,7 +275,7 @@ jQuery(document).ready(function($) {
             }
         }
 
-        ctx.fillStyle = "rgba(102, 255, 102, 0.045)";
+        ctx.fillStyle = "rgba(47, 191, 74, 0.045)";
         for (var scan = 0; scan < height; scan += 7) {
             ctx.fillRect(0, scan, width, 1);
         }
